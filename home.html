@@ -28,27 +28,33 @@
 			color: white;
 		}
 	</style>
+	<script>
+		// 改用箭頭函式
+		const clock = () => {
+			const now = new Date();
+			let sec = now.getSeconds(); // getSeconds() not getSecond
+			let min = now.getMinutes(); // getMinutes() not getMinute
+			let h = now.getHours(); // getHours() not getHour
+
+			/*
+			使用樣板字面值(Template literals) 
+			*/
+			if (h < 10) { h = `0${h}` };
+			if (min < 10) { min = `0${min}` };
+			if (sec < 10) { sec = `0${sec}` };
+			document.getElementById('timer').innerHTML = `${h}:${min}:${sec}`;
+			// getElementById not getElementId
+			setTimeout(clock, 100);
+			// 也可考慮改用 setinterval()
+		}
+	</script>
 </head>
 
-<body onload="clock">
+<body onLoad="clock()">
+	<!-- clock() not clock -->
 	<h1>Clock</h1>
-	<div id="timer" />
-	<script>
-		function clock() {
-			const now = new Date();
-			let sec = now.getSecond;
-			let min = now.getMinute;
-			let h = now.getHour;
-
-			if (h < 10) { h = "0" + h };
-			if (min < 10) { min = "0" + min };
-			if (sec < 10) { sec = "0" + sec };
-			document.getElementId('timer').innerHTML = h + ":" + min + ":" + sec;
-			setTimeout(clock, 1000);
-		}
-
-
-	</script>
+	<div id="timer" class="clock"></div>
+	<!-- 此處應該增加class -->
 </body>
 
 </html>
