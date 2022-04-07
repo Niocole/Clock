@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta charset="utf-8"/>
-	<meta name="description" content="Clock"/>
-	<meta name="application-name" content="clock"/>
-	<title>Clock</title>
-		<style>
-			body {
-				background-color: black;
-				opacity: 1;
-				}
-			h1 {
-				font-size: 50px;
-				margin-top: 50px;
-				color: white;
-				font-family: Orbitron;
-				position: middle;
-				}
-			.clock {
-				letter-spacing: 5px;
-				font-family: Orbitron;
-				position:middle;
-				color: white;
-			}
-		</style>
-	</head>
-	<body onload="clock">
-		<h1>Clock</h1>
-		<div id="timer"/>
-		<script>
-			function clock() {
-				const now = new Date();
-				let sec = now.getSecond;
-				let min = now.getMinute;
-				let h = now.getHour;
 
-				if (h < 10) {h = "0" + h};
-				if (min < 10) {min = "0" + min};
-				if (sec < 10) {sec = "0" + sec};
-				document.getElementId('timer').innerHTML = 	h + ":" + min + ":" + sec;
-				setTimeout(clock, 1000);
-			}
-			
-			
-		</script>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+	<meta name="description" content="Clock" />
+	<meta name="application-name" content="clock" />
+	<title>Clock</title>
+	<style>
+		body {
+			background-color: black;
+			opacity: 1;
+		}
+
+		h1 {
+			font-size: 50px;
+			margin-top: 50px;
+			color: white;
+			font-family: Orbitron;
+			position: middle;
+		}
+
+		.clock {
+			letter-spacing: 5px;
+			font-family: Orbitron;
+			position: middle;
+			color: white;
+		}
+	</style>
+</head>
+
+<body onload="clock">
+	<h1>Clock</h1>
+	<div id="timer" />
+	<script>
+		function clock() {
+			const now = new Date();
+			let sec = now.getSecond;
+			let min = now.getMinute;
+			let h = now.getHour;
+
+			if (h < 10) { h = "0" + h };
+			if (min < 10) { min = "0" + min };
+			if (sec < 10) { sec = "0" + sec };
+			document.getElementId('timer').innerHTML = h + ":" + min + ":" + sec;
+			setTimeout(clock, 1000);
+		}
+
+
+	</script>
+</body>
+
 </html>
