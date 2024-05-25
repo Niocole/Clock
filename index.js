@@ -14,7 +14,7 @@ getTime = setInterval(() => {
     } else if (minute < 10) {
         minute = "0" + minute.toString();
     } else if (second < 10) {
-        second = "0" + second.toString();
+        second = `0${second}`;
     }
 
     clock.innerHTML = `${hour}:${minute}:${second}`;

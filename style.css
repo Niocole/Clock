@@ -1,0 +1,16 @@
+html {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#clock {
+    height: 50%;
+    font-size: 200px;
+    margin-top: 25%;
+    font-weight: bolder;
+    font-family: monospace;
+    color: white;
+}
