@@ -1,16 +1,22 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+getTime = setInterval(() => {
+    const clock = document.getElementById('clock');
+    const now = new Date();
+    let hour = now.getHours();
+    // console.log(hour);
+    let minute = now.getMinutes();
+    // console.log(minute);
+    let second = now.getSeconds();
+    // console.log(millisecond);
 
-const app = express();
+    
+    if (hour < 10) {
+        hour = "0" + hour.toString();
+    } else if (minute < 10) {
+        minute = "0" + minute.toString();
+    } else if (second < 10) {
+        second = "0" + second.toString();
+    }
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
-
-app.listen(3000, () => {
-  console.log('server started');
-});
-
-app.get('/', (req, res) => {
-  res.sendFile('./home.html', { root: __dirname })
-});
+    clock.innerHTML = `${hour}:${minute}:${second}`;
+    console.log(`${hour}:${minute}:${second}`);
+}, 500)
